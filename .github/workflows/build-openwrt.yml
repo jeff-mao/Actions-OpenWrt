@@ -21,8 +21,8 @@ on:
       - '.config'
 #  schedule:
 #    - cron: 0 8 * * 5
-#  watch:
-#    types: started
+  watch:
+    types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -73,7 +73,16 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
-
+        
+    #- name: Install oaf
+    #  run: cd openwrt/package && git clone https://github.com/destan19/OpenAppFilter.git
+    
+    #- name: Install ssr
+    #  run: cd openwrt/package/lean && git clone https://github.com/maxlicheng/luci-app-ssr-plus.git
+      
+    - name: clone packages    
+      run: cd openwrt/package && git clone https://github.com/liuran001/openwrt-packages
+      
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
