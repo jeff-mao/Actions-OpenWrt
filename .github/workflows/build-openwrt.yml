@@ -97,7 +97,7 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
-    - name: SSH connection to Actions
+    - name: SSH connection to Actions https://tmate.io/t/url无@
       #uses: P3TERX/debugger-action@main
       #if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
       #uses: P3TERX/debugger-action@master
